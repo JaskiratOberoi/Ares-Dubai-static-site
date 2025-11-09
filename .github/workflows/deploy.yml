@@ -31,7 +31,8 @@ jobs:
           server: ${{ secrets.HOSTINGER_HOST }}
           username: ${{ secrets.HOSTINGER_USER }}
           password: ${{ secrets.HOSTINGER_PASSWORD }}
-          protocol: ftps
+          protocol: ftp
+          port: 21
           local-dir: dist/
           server-dir: ${{ secrets.HOSTINGER_REMOTE_DIR }}
           log-level: verbose
