@@ -32,7 +32,7 @@ jobs:
           username: ${{ secrets.HOSTINGER_USER }}
           password: ${{ secrets.HOSTINGER_PASSWORD }}
           protocol: ftps
-          local-dir: dist
+          local-dir: dist/
           server-dir: ${{ secrets.HOSTINGER_REMOTE_DIR }}
           log-level: verbose
 
