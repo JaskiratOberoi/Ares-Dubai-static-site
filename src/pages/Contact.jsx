@@ -3,9 +3,21 @@ const Contact = () => {
     event.preventDefault()
     const form = event.currentTarget
     const data = Object.fromEntries(new FormData(form).entries())
-    console.table(data)
+
+    const subject = encodeURIComponent(`New enquiry from ${data.name || 'ARES Dubai site'}`)
+    const lines = [
+      `Name: ${data.name ?? 'N/A'}`,
+      `Email: ${data.email ?? 'N/A'}`,
+      `Phone: ${data.phone ?? 'N/A'}`,
+      '',
+      'Message:',
+      data.message ?? '',
+    ]
+    const body = encodeURIComponent(lines.join('\n'))
+
+    window.location.href = `mailto:contact@ares-labs.com?subject=${subject}&body=${body}`
+
     form.reset()
-    alert('Thanks for reaching out! A member of the ARES Dubai team will respond shortly.')
   }
 
   return (
