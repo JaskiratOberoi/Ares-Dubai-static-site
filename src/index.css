@@ -32,6 +32,7 @@ body {
     radial-gradient(circle at 90% 10%, rgba(23, 121, 255, 0.18), transparent 45%),
     var(--color-bg);
   color: var(--color-text);
+  scroll-behavior: smooth;
 }
 
 body {

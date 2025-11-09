@@ -1,3 +1,5 @@
+import Reveal from '../components/Reveal.jsx'
+
 const opportunities = [
   {
     title: 'Clinical application specialists',
@@ -20,28 +22,28 @@ const Careers = () => {
   return (
     <section className="section careers">
       <div className="section-inner">
-        <h1>Careers & collaborations</h1>
-        <p className="lead">
-          ARES Dubai is growing fast, and we’re assembling a team of specialists who are passionate
-          about the science behind diagnostics. Whether you are an engineer, application scientist,
-          commercial strategist, or distribution partner, we would love to hear from you.
-        </p>
+        <Reveal as="h1">Careers & collaborations</Reveal>
+        <Reveal className="lead" delay={120}>
+          ARES Dubai is growing fast, and we’re assembling a team of specialists who are passionate about the science
+          behind diagnostics. Whether you are an engineer, application scientist, commercial strategist, or distribution
+          partner, we would love to hear from you.
+        </Reveal>
         <div className="opportunity-grid">
-          {opportunities.map((role) => (
-            <article key={role.title}>
+          {opportunities.map((role, index) => (
+            <Reveal as="article" key={role.title} delay={index * 120}>
               <h2>{role.title}</h2>
               <p>{role.detail}</p>
-            </article>
+            </Reveal>
           ))}
         </div>
-        <div className="careers-cta">
+        <Reveal className="careers-cta" delay={320}>
           <p>
             Send your CV or partnership proposal to{' '}
             <a href="mailto:operations@ares-labs.com">operations@ares-labs.com</a> with the subject
             “Join ARES”. Please include a short overview of your experience and the markets or
             technologies you specialise in.
           </p>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

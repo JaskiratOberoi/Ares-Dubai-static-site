@@ -1,3 +1,18 @@
+.reveal {
+  opacity: 0;
+  transform: translateY(32px) scale(0.98);
+  transition:
+    opacity 0.6s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 .app-shell {
   min-height: 100vh;
   display: flex;
@@ -22,7 +37,12 @@
   border: 1px solid transparent;
   font-weight: 600;
   letter-spacing: 0.02em;
-  transition: transform 180ms ease, background 220ms ease, color 220ms ease, border 220ms ease;
+  transition:
+    transform 180ms ease,
+    background 220ms ease,
+    color 220ms ease,
+    border 220ms ease,
+    box-shadow 220ms ease;
   cursor: pointer;
 }
 
@@ -270,6 +290,10 @@
   gap: 1rem;
   padding: 1rem 1.25rem 1.5rem;
   box-shadow: 0 16px 40px rgba(5, 8, 13, 0.45);
+  transition:
+    transform 240ms ease,
+    box-shadow 240ms ease,
+    border-color 220ms ease;
 }
 
 .product-card img {
@@ -284,6 +308,12 @@
 
 .product-card p {
   margin-bottom: 0.75rem;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(252, 231, 76, 0.3);
+  box-shadow: 0 24px 44px rgba(5, 8, 13, 0.5);
 }
 
 .prose .section-inner {

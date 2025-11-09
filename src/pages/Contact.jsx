@@ -1,3 +1,5 @@
+import Reveal from '../components/Reveal.jsx'
+
 const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -24,18 +26,18 @@ const Contact = () => {
     <>
       <section className="hero hero--compact contact-hero">
         <div className="hero-backdrop" aria-hidden="true" />
-        <div className="hero-content">
+        <Reveal className="hero-content" delay={80}>
           <h1>Let’s build the future of diagnostics together</h1>
           <p className="lead">
-            Share your requirements and we’ll recommend the right instrumentation, assays, and
-            service programme for your laboratory.
+            Share your requirements and we’ll recommend the right instrumentation, assays, and service programme for your
+            laboratory.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section className="section contact">
         <div className="section-inner contact-grid">
-          <div className="contact-info">
+          <Reveal className="contact-info" delay={120}>
             <h2>Direct contact</h2>
             <p>
               <strong>Email:</strong>{' '}
@@ -60,8 +62,8 @@ const Contact = () => {
                 engineer immediately.
               </p>
             </div>
-          </div>
-          <form className="contact-form" onSubmit={handleSubmit}>
+          </Reveal>
+          <Reveal as="form" className="contact-form" onSubmit={handleSubmit} delay={200}>
             <div className="field">
               <label htmlFor="name">Name</label>
               <input id="name" name="name" type="text" autoComplete="name" required />
@@ -81,7 +83,7 @@ const Contact = () => {
             <button type="submit" className="btn primary">
               Send message
             </button>
-          </form>
+          </Reveal>
         </div>
       </section>
     </>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Reveal from '../components/Reveal.jsx'
 import { products } from '../data/products'
 
 const featureProducts = products.slice(0, 3)
@@ -8,46 +9,53 @@ const Home = () => {
     <>
       <section className="hero">
         <div className="hero-backdrop" aria-hidden="true" />
-        <div className="hero-content">
+        <Reveal className="hero-content" delay={100}>
           <p className="eyebrow">End-to-end laboratory solutions</p>
           <h1>Innovating diagnostics, empowering healthcare</h1>
           <p className="lead">
             From haematology to immunoassay, ARES Dubai delivers high-tech instruments that keep
             laboratories agile, accurate, and ready for growth across the Middle East and beyond.
           </p>
-          <div className="hero-actions">
-            <Link to="/products" className="btn primary">
-              Explore Products
-            </Link>
-            <Link to="/contact" className="btn ghost">
-              Talk to our team
-            </Link>
-          </div>
-        </div>
+            <div className="hero-actions">
+              <Link to="/products" className="btn primary">
+                Explore Products
+              </Link>
+              <Link to="/contact" className="btn ghost">
+                Talk to our team
+              </Link>
+            </div>
+        </Reveal>
       </section>
 
       <section className="section intro">
         <div className="section-inner">
-          <h2>Trusted experience, future-ready platforms</h2>
-          <p>
-            ARES Dubai draws on decades of clinical engineering and distribution expertise to build
-            a portfolio that serves every scale of laboratory. We partner with hospitals,
-            diagnostics networks, and specialty centres to integrate instruments, assays, and
-            service programmes that deliver confident results day after day.
-          </p>
+          <Reveal as="h2">Trusted experience, future-ready platforms</Reveal>
+          <Reveal delay={100}>
+            ARES Dubai draws on decades of clinical engineering and distribution expertise to build a
+            portfolio that serves every scale of laboratory. We partner with hospitals, diagnostics
+            networks, and specialty centres to integrate instruments, assays, and service programmes
+            that deliver confident results day after day.
+          </Reveal>
           <div className="stats-grid">
-            <div>
-              <span>5+</span>
-              <p>speciality disciplines covered from chemistry to molecular diagnostics</p>
-            </div>
-            <div>
-              <span>24/7</span>
-              <p>technical assistance and remote monitoring across our instrument fleet</p>
-            </div>
-            <div>
-              <span>50+</span>
-              <p>installations across the Middle East, India, and emerging markets</p>
-            </div>
+            {[
+              {
+                value: '5+',
+                label: 'speciality disciplines covered from chemistry to molecular diagnostics',
+              },
+              {
+                value: '24/7',
+                label: 'technical assistance and remote monitoring across our instrument fleet',
+              },
+              {
+                value: '50+',
+                label: 'installations across the Middle East, India, and emerging markets',
+              },
+            ].map((item, index) => (
+              <Reveal key={item.value} delay={150 + index * 80}>
+                <span>{item.value}</span>
+                <p>{item.label}</p>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -56,8 +64,8 @@ const Home = () => {
         <div className="section-inner">
           <h2>Solutions engineered for critical care</h2>
           <div className="card-grid">
-            {featureProducts.map((product) => (
-              <article className="product-card" key={product.id}>
+            {featureProducts.map((product, index) => (
+              <Reveal as="article" className="product-card" key={product.id} delay={index * 120}>
                 <img src={product.image} alt={product.title} loading="lazy" />
                 <div>
                   <h3>{product.title}</h3>
@@ -66,7 +74,7 @@ const Home = () => {
                     View product line →
                   </Link>
                 </div>
-              </article>
+              </Reveal>
             ))}
           </div>
         </div>
