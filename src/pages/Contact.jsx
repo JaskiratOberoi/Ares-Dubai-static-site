@@ -39,7 +39,7 @@ const Contact = () => {
             <h2>Direct contact</h2>
             <p>
               <strong>Email:</strong>{' '}
-              <a href="mailto:operations@ares-labs.com">operations@ares-labs.com</a>
+              <a href="mailto:contact@ares-labs.com">contact@ares-labs.com</a>
             </p>
             <p>
               <strong>WhatsApp:</strong>{' '}
