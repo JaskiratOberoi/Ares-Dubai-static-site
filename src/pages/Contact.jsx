@@ -45,13 +45,15 @@ const Contact = () => {
             </p>
             <p>
               <strong>WhatsApp:</strong>{' '}
-              <a href="https://wa.me/918595710338" target="_blank" rel="noreferrer">
-                +91&nbsp;85957&nbsp;10338
+              <a href="https://wa.me/919324634486" target="_blank" rel="noreferrer">
+                +91-9324634486
               </a>
             </p>
             <p>
-              <strong>Head office:</strong> Dubai, United Arab Emirates — servicing the Middle East,
-              India, and neighbouring regions.
+              <strong>Registered Office:</strong> WZ-490C, Janak Park, Hari Nagar, New Delhi - 110064
+            </p>
+            <p>
+              <strong>Corporate Office:</strong> A-4, 1st Floor, Subash Nagar, beside Amit Nursing Home, New Delhi - 110018
             </p>
             <p>
               <strong>Support hours:</strong> Sunday – Saturday, 08:00 – 22:00 GST

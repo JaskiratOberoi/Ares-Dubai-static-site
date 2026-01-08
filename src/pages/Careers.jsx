@@ -39,7 +39,7 @@ const Careers = () => {
         <Reveal className="careers-cta" delay={320}>
           <p>
             Send your CV or partnership proposal to{' '}
-            <a href="mailto:operations@ares-labs.com">operations@ares-labs.com</a> with the subject
+            <a href="mailto:contact@ares-labs.com">contact@ares-labs.com</a> with the subject
             “Join ARES”. Please include a short overview of your experience and the markets or
             technologies you specialise in.
           </p>
