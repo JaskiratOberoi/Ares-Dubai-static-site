@@ -6,7 +6,7 @@ const Contact = () => {
     const form = event.currentTarget
     const data = Object.fromEntries(new FormData(form).entries())
 
-    const subject = encodeURIComponent(`New enquiry from ${data.name || 'ARES Dubai site'}`)
+    const subject = encodeURIComponent(`New enquiry from ${data.name || 'ARES Labs site'}`)
     const lines = [
       `Name: ${data.name ?? 'N/A'}`,
       `Email: ${data.email ?? 'N/A'}`,

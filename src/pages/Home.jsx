@@ -13,7 +13,7 @@ const Home = () => {
           <p className="eyebrow">End-to-end laboratory solutions</p>
           <h1>Innovating diagnostics, empowering healthcare</h1>
           <p className="lead">
-            From haematology to immunoassay, ARES Dubai delivers high-tech instruments that keep
+            From haematology to immunoassay, ARES Labs delivers high-tech instruments that keep
             laboratories agile, accurate, and ready for growth across the Middle East and beyond.
           </p>
             <div className="hero-actions">
@@ -31,7 +31,7 @@ const Home = () => {
         <div className="section-inner">
           <Reveal as="h2">Trusted experience, future-ready platforms</Reveal>
           <Reveal delay={100}>
-            ARES Dubai draws on decades of clinical engineering and distribution expertise to build a
+            ARES Labs draws on decades of clinical engineering and distribution expertise to build a
             portfolio that serves every scale of laboratory. We partner with hospitals, diagnostics
             networks, and specialty centres to integrate instruments, assays, and service programmes
             that deliver confident results day after day.

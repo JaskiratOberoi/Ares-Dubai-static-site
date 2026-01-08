@@ -19,8 +19,8 @@ const Header = () => {
     <header className="site-header">
       <div className="header-bar">
         <Link to="/" className="brand" onClick={closeMenu}>
-          <img src="/assets/images/logo.png" alt="ARES Dubai logo" />
-          <span>ARES Dubai</span>
+          <img src="/assets/images/logo.png" alt="ARES Labs logo" />
+          <span>ARES Labs</span>
         </Link>
         <button
           type="button"

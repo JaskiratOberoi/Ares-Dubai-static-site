@@ -24,7 +24,7 @@ const Careers = () => {
       <div className="section-inner">
         <Reveal as="h1">Careers & collaborations</Reveal>
         <Reveal className="lead" delay={120}>
-          ARES Dubai is growing fast, and we’re assembling a team of specialists who are passionate about the science
+          ARES Labs is growing fast, and we're assembling a team of specialists who are passionate about the science
           behind diagnostics. Whether you are an engineer, application scientist, commercial strategist, or distribution
           partner, we would love to hear from you.
         </Reveal>

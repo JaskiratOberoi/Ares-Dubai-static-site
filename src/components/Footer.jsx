@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className="site-footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <img src="/assets/images/logo.png" alt="ARES Dubai" />
+          <img src="/assets/images/logo.png" alt="ARES Labs" />
           <div>
-            <p className="footer-title">ARES Dubai</p>
+            <p className="footer-title">ARES Labs</p>
             <p className="footer-tagline">Innovating diagnostic, empowering healthcare.</p>
           </div>
         </div>
@@ -48,7 +48,7 @@ const Footer = () => {
       <div className="footer-divider"></div>
       
       <div className="footer-meta">
-        <p>© {year} ARES Dubai. All rights reserved.</p>
+        <p>© {year} ARES Labs. All rights reserved.</p>
       </div>
     </footer>
   )
