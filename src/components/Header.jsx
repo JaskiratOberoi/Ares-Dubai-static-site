@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 const NAV_LINKS = [
@@ -11,12 +11,21 @@ const NAV_LINKS = [
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   const toggleMenu = () => setIsOpen((state) => !state)
   const closeMenu = () => setIsOpen(false)
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <header className="site-header">
+    <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-bar">
         <Link to="/" className="brand" onClick={closeMenu}>
           <img src="/assets/images/logo.png" alt="ARES Labs logo" />

@@ -20,32 +20,52 @@ const opportunities = [
 
 const Careers = () => {
   return (
-    <section className="section careers">
-      <div className="section-inner">
-        <Reveal as="h1">Careers & collaborations</Reveal>
-        <Reveal className="lead" delay={120}>
-          ARES Labs is growing fast, and we're assembling a team of specialists who are passionate about the science
-          behind diagnostics. Whether you are an engineer, application scientist, commercial strategist, or distribution
-          partner, we would love to hear from you.
-        </Reveal>
-        <div className="opportunity-grid">
-          {opportunities.map((role, index) => (
-            <Reveal as="article" key={role.title} delay={index * 120}>
-              <h2>{role.title}</h2>
-              <p>{role.detail}</p>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal className="careers-cta" delay={320}>
-          <p>
-            Send your CV or partnership proposal to{' '}
-            <a href="mailto:contact@ares-labs.com">contact@ares-labs.com</a> with the subject
-            “Join ARES”. Please include a short overview of your experience and the markets or
-            technologies you specialise in.
+    <>
+      <section className="hero hero--compact">
+        <div className="hero-backdrop" aria-hidden="true" />
+        <Reveal className="hero-content" delay={100} animation="slideUp">
+          <p className="eyebrow">Join our team</p>
+          <h1 className="hero-title-gradient">Careers & collaborations</h1>
+          <p className="lead">
+            ARES Labs is growing fast, and we're assembling a team of specialists who are passionate about the science
+            behind diagnostics.
           </p>
         </Reveal>
-      </div>
-    </section>
+      </section>
+
+      <section className="section careers">
+        <div className="section-inner">
+          <Reveal className="lead" delay={120} animation="fadeIn">
+            <p>
+              Whether you are an engineer, application scientist, commercial strategist, or distribution
+              partner, we would love to hear from you.
+            </p>
+          </Reveal>
+          <div className="opportunity-grid">
+            {opportunities.map((role, index) => (
+              <Reveal 
+                as="article" 
+                key={role.title} 
+                delay={index * 120}
+                animation="scaleIn"
+              >
+                <h2>{role.title}</h2>
+                <p>{role.detail}</p>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="careers-cta" delay={400} animation="scaleIn">
+            <h2>Ready to join us?</h2>
+            <p>
+              Send your CV or partnership proposal to{' '}
+              <a href="mailto:contact@ares-labs.com">contact@ares-labs.com</a> with the subject
+              "Join ARES". Please include a short overview of your experience and the markets or
+              technologies you specialise in.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+    </>
   )
 }
 

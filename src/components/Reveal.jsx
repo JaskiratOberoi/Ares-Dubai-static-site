@@ -1,6 +1,14 @@
 import { useEffect, useMemo, useRef } from 'react'
 
-const Reveal = ({ as: Component = 'div', className = '', delay = 0, children, style, ...rest }) => {
+const Reveal = ({ 
+  as: Component = 'div', 
+  className = '', 
+  delay = 0, 
+  children, 
+  style,
+  animation = 'slideUp', // 'fadeIn', 'slideUp', 'slideDown', 'scaleIn', 'rotateIn'
+  ...rest 
+}) => {
   const elementRef = useRef(null)
   const transitionDelay = useMemo(() => `${delay}ms`, [delay])
 
@@ -17,17 +25,19 @@ const Reveal = ({ as: Component = 'div', className = '', delay = 0, children, st
           }
         })
       },
-      { threshold: 0.2 }
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
     )
 
     observer.observe(node)
     return () => observer.disconnect()
   }, [])
 
+  const animationClass = `reveal-${animation}`
+
   return (
     <Component
       ref={elementRef}
-      className={`reveal ${className}`.trim()}
+      className={`reveal ${animationClass} ${className}`.trim()}
       style={{ '--reveal-delay': transitionDelay, ...style }}
       {...rest}
     >

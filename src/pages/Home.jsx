@@ -1,17 +1,38 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
 import Reveal from '../components/Reveal.jsx'
+import Counter from '../components/Counter.jsx'
 import { products } from '../data/products'
+import ThreeBackground from '../components/ThreeBackground.jsx'
 
 const featureProducts = products.slice(0, 3)
 
 const Home = () => {
+  const heroRef = useRef(null)
+
+  useEffect(() => {
+    const handleParallax = () => {
+      if (heroRef.current) {
+        const scrolled = window.pageYOffset
+        const parallax = scrolled * 0.3
+        heroRef.current.style.transform = `translateY(${parallax}px)`
+      }
+    }
+
+    window.addEventListener('scroll', handleParallax, { passive: true })
+    return () => window.removeEventListener('scroll', handleParallax)
+  }, [])
+
   return (
     <>
       <section className="hero">
         <div className="hero-backdrop" aria-hidden="true" />
-        <Reveal className="hero-content" delay={100}>
+        <div className="hero-3d-background" ref={heroRef}>
+          <ThreeBackground />
+        </div>
+        <Reveal className="hero-content" delay={100} animation="slideUp">
           <p className="eyebrow">End-to-end laboratory solutions</p>
-          <h1>Innovating diagnostics, empowering healthcare</h1>
+          <h1 className="hero-title-gradient">Innovating diagnostics, empowering healthcare</h1>
           <p className="lead">
             From haematology to immunoassay, ARES Labs delivers high-tech instruments that keep
             laboratories agile, accurate, and ready for growth across the Middle East and beyond.
@@ -29,7 +50,7 @@ const Home = () => {
 
       <section className="section intro">
         <div className="section-inner">
-          <Reveal as="h2">Trusted experience, future-ready platforms</Reveal>
+          <Reveal as="h2" className="section-heading" animation="slideUp">Trusted experience, future-ready platforms</Reveal>
           <Reveal delay={100}>
             ARES Labs draws on decades of clinical engineering and distribution expertise to build a
             portfolio that serves every scale of laboratory. We partner with hospitals, diagnostics
@@ -39,21 +60,28 @@ const Home = () => {
           <div className="stats-grid">
             {[
               {
-                value: '5+',
+                value: 5,
+                suffix: '+',
                 label: 'speciality disciplines covered from chemistry to molecular diagnostics',
               },
               {
                 value: '24/7',
+                isText: true,
                 label: 'technical assistance and remote monitoring across our instrument fleet',
               },
               {
-                value: '50+',
+                value: 50,
+                suffix: '+',
                 label: 'installations across the Middle East, India, and emerging markets',
               },
             ].map((item, index) => (
-              <Reveal key={item.value} delay={150 + index * 80}>
-                <span>{item.value}</span>
-                <p>{item.label}</p>
+              <Reveal key={item.value} delay={150 + index * 80} animation="scaleIn">
+                <div className="stat-item">
+                  <span className="stat-value">
+                    {item.isText ? item.value : <Counter end={item.value} suffix={item.suffix} />}
+                  </span>
+                  <p>{item.label}</p>
+                </div>
               </Reveal>
             ))}
           </div>

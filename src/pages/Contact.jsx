@@ -26,10 +26,11 @@ const Contact = () => {
     <>
       <section className="hero hero--compact contact-hero">
         <div className="hero-backdrop" aria-hidden="true" />
-        <Reveal className="hero-content" delay={80}>
-          <h1>Let’s build the future of diagnostics together</h1>
+        <Reveal className="hero-content" delay={80} animation="slideUp">
+          <p className="eyebrow">Get in touch</p>
+          <h1 className="hero-title-gradient">Let's build the future of diagnostics together</h1>
           <p className="lead">
-            Share your requirements and we’ll recommend the right instrumentation, assays, and service programme for your
+            Share your requirements and we'll recommend the right instrumentation, assays, and service programme for your
             laboratory.
           </p>
         </Reveal>
@@ -67,20 +68,20 @@ const Contact = () => {
           </Reveal>
           <Reveal as="form" className="contact-form" onSubmit={handleSubmit} delay={200}>
             <div className="field">
+              <input id="name" name="name" type="text" autoComplete="name" placeholder=" " required />
               <label htmlFor="name">Name</label>
-              <input id="name" name="name" type="text" autoComplete="name" required />
             </div>
             <div className="field">
+              <input id="email" name="email" type="email" autoComplete="email" placeholder=" " required />
               <label htmlFor="email">Email</label>
-              <input id="email" name="email" type="email" autoComplete="email" required />
             </div>
             <div className="field">
+              <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder=" " />
               <label htmlFor="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" autoComplete="tel" />
             </div>
             <div className="field">
+              <textarea id="message" name="message" rows="5" placeholder=" " required />
               <label htmlFor="message">How can we help?</label>
-              <textarea id="message" name="message" rows="5" required />
             </div>
             <button type="submit" className="btn primary">
               Send message

@@ -1,5 +1,7 @@
 @import '@fontsource-variable/inter';
 @import '@fontsource-variable/playfair-display';
+@import '@fontsource-variable/manrope';
+@import '@fontsource-variable/space-grotesk';
 
 :root {
   color-scheme: dark;
@@ -10,12 +12,147 @@
   --color-text: #f3f4f6;
   --color-text-muted: rgba(230, 233, 240, 0.78);
   --max-width: min(1120px, 100% - 3rem);
-  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
-  line-height: 1.6;
+  
+  /* Typography */
+  --font-body: 'Manrope Variable', 'Inter Variable', 'Inter', system-ui, sans-serif;
+  --font-heading: 'Space Grotesk Variable', 'Playfair Display Variable', 'Playfair Display', serif;
+  --font-display: 'Playfair Display Variable', 'Playfair Display', serif;
+  
+  font-family: var(--font-body);
+  line-height: 1.7;
   font-weight: 400;
+  font-size: 16px;
+  letter-spacing: -0.01em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+
+  /* Enhanced 3D and animation variables */
+  --perspective: 1000px;
+  --transform-speed: 0.3s;
+  --transform-easing: cubic-bezier(0.22, 1, 0.36, 1);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px rgba(252, 231, 76, 0.3);
+  --gradient-primary: linear-gradient(135deg, rgba(252, 231, 76, 0.1) 0%, rgba(98, 143, 252, 0.1) 100%);
+  --gradient-accent: linear-gradient(135deg, #fce74c 0%, #ffd34d 50%, #ffb347 100%);
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-5deg) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(252, 231, 76, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(252, 231, 76, 0.5);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes counter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3D transform utilities */
+.perspective-3d {
+  perspective: var(--perspective);
+  transform-style: preserve-3d;
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.glass-effect {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
 }
 
 *,
@@ -51,17 +188,50 @@ img {
 
 h1,
 h2,
-h3 {
-  font-family: 'Playfair Display Variable', 'Playfair Display', 'Times New Roman', serif;
-  letter-spacing: 0.04em;
-  font-weight: 400;
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  font-weight: 600;
   color: var(--color-highlight);
   margin: 0 0 0.75em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw + 0.5rem, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw + 0.5rem, 2rem);
+  font-weight: 600;
 }
 
 p {
-  margin: 0 0 1.35em;
+  margin: 0 0 1.5em;
   color: var(--color-text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  letter-spacing: -0.005em;
+}
+
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  font-weight: 400;
+  color: rgba(230, 233, 240, 0.85);
+  letter-spacing: -0.01em;
 }
 
 main {
