@@ -3,7 +3,7 @@ import Reveal from '../components/Reveal.jsx'
 import { products } from '../data/products'
 import aresBanner from '../assets/Ares Banner.png'
 
-const featureProductIds = ['magicl-6000', 'magicl-6000i', 'hematology']
+const featureProductIds = ['magicl-6000', 'magicl-6000i', 'chemistry']
 const featureProducts = featureProductIds
   .map(id => products.find(product => product.id === id))
   .filter(Boolean)
