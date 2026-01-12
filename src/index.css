@@ -15,8 +15,8 @@
   
   /* Typography */
   --font-body: 'Manrope Variable', 'Inter Variable', 'Inter', system-ui, sans-serif;
-  --font-heading: 'Space Grotesk Variable', 'Playfair Display Variable', 'Playfair Display', serif;
-  --font-display: 'Playfair Display Variable', 'Playfair Display', serif;
+  --font-heading: 'Raleway', 'Space Grotesk Variable', 'Playfair Display Variable', 'Playfair Display', serif;
+  --font-display: 'Raleway', 'Playfair Display Variable', 'Playfair Display', serif;
   
   font-family: var(--font-body);
   line-height: 1.7;
