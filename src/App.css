@@ -1030,9 +1030,7 @@
   transition: transform 0.3s var(--transform-easing), box-shadow 0.3s ease, border-color 0.3s ease;
   transform-style: preserve-3d;
   margin: 3rem 0;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   position: relative;
   animation: subtleGlow 4s ease-in-out infinite 1s;
 }
