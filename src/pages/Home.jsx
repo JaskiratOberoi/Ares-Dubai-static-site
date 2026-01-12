@@ -111,7 +111,7 @@ const Home = () => {
           </div>
           <Reveal delay={840} animation="fadeIn">
             <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-              <Link to="/about" className="inline-link">
+              <Link to="/about-us" className="inline-link">
                 View all core values →
               </Link>
             </div>
