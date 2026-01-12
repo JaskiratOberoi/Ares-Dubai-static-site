@@ -1,101 +1,62 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useRef } from 'react'
 import Reveal from '../components/Reveal.jsx'
-import Counter from '../components/Counter.jsx'
 import { products } from '../data/products'
-import ThreeBackground from '../components/ThreeBackground.jsx'
+import aresBanner from '../assets/Ares Banner.png'
 
-const featureProducts = products.slice(0, 3)
+const featureProductIds = ['magicl-6000', 'magicl-6000i', 'hematology']
+const featureProducts = featureProductIds
+  .map(id => products.find(product => product.id === id))
+  .filter(Boolean)
+
+const vision = {
+  title: 'Vision',
+  description: 'To be a global leader in the development and delivery of innovative IVD instruments and reagents, empowering healthcare professionals with reliable and precise diagnostic tools that enhance patient care and contribute to a healthier world.',
+}
+
+const mission = {
+  title: 'Mission',
+  description: 'Our mission at Ares Labs LLP is to design, manufacture, and supply cutting-edge IVD instruments and reagents that meet the highest standards of quality and accuracy. We are committed to advancing diagnostic technologies, fostering innovation, and building lasting partnerships with healthcare providers to improve diagnostic capabilities and patient outcomes nationwide.',
+}
+
+const coreValuesPreview = [
+  {
+    title: 'Innovation',
+    description: 'We are committed to pushing the boundaries of diagnostic technology, continuously seeking new and better ways to improve patient care through advanced IVD solutions.',
+  },
+  {
+    title: 'Quality',
+    description: 'Quality is at the heart of everything we do. From research and development to manufacturing and customer support, we strive to meet and exceed the highest industry standards.',
+  },
+  {
+    title: 'Excellence',
+    description: 'We pursue excellence in every aspect of our work, from the precision of our diagnostic tools to the efficiency of our operations, ensuring the best outcomes for our clients and their patients.',
+  },
+  {
+    title: 'Customer-Centricity',
+    description: 'Our customers\' needs guide our actions. We prioritize understanding and addressing the unique challenges of healthcare professionals, providing tailored solutions and exceptional service.',
+  },
+]
 
 const Home = () => {
-  const heroRef = useRef(null)
-
-  useEffect(() => {
-    const handleParallax = () => {
-      if (heroRef.current) {
-        const scrolled = window.pageYOffset
-        const parallax = scrolled * 0.3
-        heroRef.current.style.transform = `translateY(${parallax}px)`
-      }
-    }
-
-    window.addEventListener('scroll', handleParallax, { passive: true })
-    return () => window.removeEventListener('scroll', handleParallax)
-  }, [])
-
   return (
     <>
       <section className="hero">
-        <div className="hero-backdrop" aria-hidden="true" />
-        <div className="hero-3d-background" ref={heroRef}>
-          <ThreeBackground />
-        </div>
-        <Reveal className="hero-content" delay={100} animation="slideUp">
-          <p className="eyebrow">End-to-end laboratory solutions</p>
-          <h1 className="hero-title-gradient">Innovating diagnostics, empowering healthcare</h1>
-          <p className="lead">
-            From haematology to immunoassay, ARES Labs delivers high-tech instruments that keep
-            laboratories agile, accurate, and ready for growth across the Middle East and beyond.
-          </p>
-            <div className="hero-actions">
-              <Link to="/products" className="btn primary">
-                Explore Products
-              </Link>
-              <Link to="/contact" className="btn ghost">
-                Talk to our team
-              </Link>
-            </div>
-        </Reveal>
-      </section>
-
-      <section className="section intro">
-        <div className="section-inner">
-          <Reveal as="h2" className="section-heading" animation="slideUp">Trusted experience, future-ready platforms</Reveal>
-          <Reveal delay={100}>
-            ARES Labs draws on decades of clinical engineering and distribution expertise to build a
-            portfolio that serves every scale of laboratory. We partner with hospitals, diagnostics
-            networks, and specialty centres to integrate instruments, assays, and service programmes
-            that deliver confident results day after day.
-          </Reveal>
-          <div className="stats-grid">
-            {[
-              {
-                value: 5,
-                suffix: '+',
-                label: 'speciality disciplines covered from chemistry to molecular diagnostics',
-              },
-              {
-                value: '24/7',
-                isText: true,
-                label: 'technical assistance and remote monitoring across our instrument fleet',
-              },
-              {
-                value: 50,
-                suffix: '+',
-                label: 'installations across the Middle East, India, and emerging markets',
-              },
-            ].map((item, index) => (
-              <Reveal key={item.value} delay={150 + index * 80} animation="scaleIn">
-                <div className="stat-item">
-                  <span className="stat-value">
-                    {item.isText ? item.value : <Counter end={item.value} suffix={item.suffix} />}
-                  </span>
-                  <p>{item.label}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+        <div className="hero-banner-background">
+          <img src={aresBanner} alt="ARES Labs" className="hero-banner" />
         </div>
       </section>
 
       <section className="section focus">
         <div className="section-inner">
           <h2>Solutions engineered for critical care</h2>
+          <p>Comprehensive IVD products designed to meet the evolving needs of modern healthcare laboratories.</p>
           <div className="card-grid">
             {featureProducts.map((product, index) => (
               <Reveal as="article" className="product-card" key={product.id} delay={index * 120}>
-                <img src={product.image} alt={product.title} loading="lazy" />
-                <div>
+                <div className="product-card-image-wrapper">
+                  <img src={product.image} alt={product.title} loading="lazy" />
+                </div>
+                <div className="product-card-content">
                   <h3>{product.title}</h3>
                   <p>{product.summary}</p>
                   <Link to="/products" className="inline-link">
@@ -105,6 +66,56 @@ const Home = () => {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-inner">
+          <div className="section-separator"></div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-inner">
+          <div className="vision-mission-grid">
+            <Reveal className="vision-mission-card" delay={400} animation="scaleIn">
+              <h2 className="vision-mission-title">{vision.title}</h2>
+              <p className="vision-mission-text">{vision.description}</p>
+            </Reveal>
+            <Reveal className="vision-mission-card" delay={480} animation="scaleIn">
+              <h2 className="vision-mission-title">{mission.title}</h2>
+              <p className="vision-mission-text">{mission.description}</p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-inner">
+          <Reveal className="section-heading" delay={560} animation="slideUp">
+            <p className="eyebrow">What drives us</p>
+            <h2 className="section-title">Core Values</h2>
+          </Reveal>
+          <div className="core-values-grid">
+            {coreValuesPreview.map((value, index) => (
+              <Reveal 
+                key={value.title} 
+                className="core-value-card" 
+                delay={600 + (index * 60)} 
+                animation="scaleIn"
+              >
+                <h3 className="core-value-title">{value.title}</h3>
+                <p className="core-value-text">{value.description}</p>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={840} animation="fadeIn">
+            <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+              <Link to="/about" className="inline-link">
+                View all core values →
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>

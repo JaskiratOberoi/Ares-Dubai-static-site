@@ -164,10 +164,7 @@
 html,
 body {
   min-height: 100%;
-  background:
-    radial-gradient(circle at 10% 0%, rgba(252, 231, 76, 0.12), transparent 48%),
-    radial-gradient(circle at 90% 10%, rgba(23, 121, 255, 0.18), transparent 45%),
-    var(--color-bg);
+  background: #000000;
   color: var(--color-text);
   scroll-behavior: smooth;
 }

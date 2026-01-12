@@ -39,7 +39,7 @@ const Contact = () => {
       <section className="section contact">
         <div className="section-inner contact-grid">
           <Reveal className="contact-info" delay={120}>
-            <h2>Direct contact</h2>
+            <h2>Contact Details</h2>
             <p>
               <strong>Email:</strong>{' '}
               <a href="mailto:contact@ares-labs.com">contact@ares-labs.com</a>
