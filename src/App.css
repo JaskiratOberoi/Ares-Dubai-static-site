@@ -626,7 +626,7 @@
 }
 
 .product-card:nth-child(2) .product-card-image-wrapper img {
-  transform: scale(1.4);
+  transform: scale(1.0);
 }
 
 .product-card:nth-child(3) .product-card-image-wrapper img {
@@ -634,7 +634,11 @@
 }
 
 .product-card:hover .product-card-image-wrapper img {
-  transform: scale(1.5);
+  transform: scale(1.1);
+}
+
+.product-card:nth-child(2):hover .product-card-image-wrapper img {
+  transform: scale(1.1);
 }
 
 .product-card:nth-child(3):hover .product-card-image-wrapper img {

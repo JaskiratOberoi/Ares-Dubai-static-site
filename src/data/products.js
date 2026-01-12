@@ -29,7 +29,7 @@ export const products = [
   {
     id: 'poct',
     title: 'Point-of-Care Testing',
-    image: '/assets/images/DC-3100-POCT.jpg',
+    image: '/assets/images/POCT-Getein.jpg',
     summary:
       'Fluorescence-based point-of-care testing that delivers central-lab quality where time matters most.',
     description:
@@ -38,7 +38,7 @@ export const products = [
   {
     id: 'hplc',
     title: 'HPLC HbA1c Systems',
-    image: '/assets/images/HPLC-HbA1c.jpg',
+    image: '/assets/images/HPLC-ZEUS-D20.png',
     summary:
       'High-performance liquid chromatography platforms that eliminate common HbA1c variant interferences.',
     description:
@@ -47,20 +47,11 @@ export const products = [
   {
     id: 'a1cgo-poct',
     title: 'A1cGo POCT machine',
-    image: '/assets/images/DC-3100-POCT.jpg',
+    image: '/assets/images/POCT-Getein.jpg',
     summary:
       'Point-of-care HbA1c testing device delivering fast, accurate diabetes monitoring results.',
     description:
       'The A1cGo POCT machine provides rapid HbA1c testing at the point of care, enabling immediate diabetes management decisions. This compact, easy-to-use device delivers laboratory-quality results in minutes, making it ideal for clinics, pharmacies, and outreach settings.',
-  },
-  {
-    id: 'magicl-6000',
-    title: 'MAGICL 6000 Chemiluminescence Immunoassay Analyzer',
-    image: '/assets/images/SJKAHDFKS.png',
-    summary:
-      'Fully automated chemiluminescence immunoassay analyzer with 14 reagent positions and 50 sample positions for comprehensive biomarker detection.',
-    description:
-      'Automated chemiluminescence analyzer for comprehensive biomarker detection including thyroid, tumor markers, cardiac, infectious disease, and more. Supports whole blood, serum, plasma, and urine samples with automatic reagent recognition and LIS/HIS connectivity.',
   },
   {
     id: 'magicl-6000i',
