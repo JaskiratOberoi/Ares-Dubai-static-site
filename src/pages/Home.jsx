@@ -42,7 +42,7 @@ const Home = () => (
         </h1>
         <div className="index-aside">
           <p className="lead" data-intro-item>
-            Four IVD platforms for Middle East and Indian labs, serviced daily.
+            Four IVD platforms for Indian labs, serviced daily.
           </p>
           <div className="actions" data-intro-item>
             <Link to="/contact" className="btn btn--primary" data-fill viewTransition>
@@ -132,8 +132,8 @@ const Home = () => (
           Where are your engineers?
         </h2>
         <p className="statement statement--wipe">
-          Laboratories across the Middle East and India, with field engineers in KSA, Qatar
-          and India.
+          Laboratories across India, served by field engineers and application
+          specialists.
         </p>
         <p className="statement-note" data-reveal>
           Registered and corporate offices in New Delhi.

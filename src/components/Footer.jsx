@@ -19,8 +19,8 @@ const Footer = () => {
         </Link>
 
         <p className="footer-colophon">
-          ARES Labs LLP supplies and services in-vitro diagnostic instruments for laboratories in
-          the Middle East, India and neighbouring markets. Registered office: WZ-490C, Janak Park,
+          ARES Labs LLP supplies and services in-vitro diagnostic instruments for laboratories
+          across India. Registered office: WZ-490C, Janak Park,
           Hari Nagar, New Delhi 110064. Corporate office: A-4, 1st Floor, Subash Nagar, beside Amit
           Nursing Home, New Delhi 110018. Write to{' '}
           <a href="mailto:contact@ares-labs.com">contact@ares-labs.com</a> or message{' '}

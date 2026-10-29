@@ -6,8 +6,8 @@ const pillars = [
     text: 'Haematology, clinical biochemistry, immunoassay and HPLC, curated for laboratories of every size and throughput.',
   },
   {
-    title: 'Regional depth',
-    text: 'The Middle East, India and neighbouring growth markets, served by local engineers and application specialists.',
+    title: 'Depth across India',
+    text: 'Laboratories across India, served by local engineers and application specialists.',
   },
   {
     title: 'Trusted partnerships',
@@ -33,7 +33,7 @@ const About = () => (
         Instruments, assays and the people behind them.
       </h1>
       <p className="lead" data-intro-item>
-        ARES Labs supplies IVD technology to the Middle East, India and nearby markets.
+        ARES Labs supplies IVD technology to laboratories across India.
       </p>
     </section>
 

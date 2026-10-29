@@ -7,12 +7,12 @@ const opportunities = [
   {
     title: 'Field service engineers',
     detail:
-      'Deliver preventative maintenance and responsive on-site support across KSA, Qatar and India.',
+      'Deliver preventative maintenance and responsive on-site support across India.',
   },
   {
     title: 'Channel partners',
     detail:
-      'Work with the ARES commercial team to extend our footprint in emerging markets throughout the region.',
+      'Work with the ARES commercial team to extend our footprint across India.',
   },
 ]
 
@@ -22,8 +22,8 @@ const perks = [
     text: 'Your work ships into hospitals and labs and changes patient outcomes.',
   },
   {
-    title: 'A growing region',
-    text: 'The Middle East and India are among the fastest-growing diagnostics markets.',
+    title: 'A growing market',
+    text: 'India is among the fastest-growing diagnostics markets in the world.',
   },
   {
     title: 'Learn the whole stack',
