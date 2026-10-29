@@ -132,8 +132,8 @@ const Home = () => (
           Where are your engineers?
         </h2>
         <p className="statement statement--wipe">
-          Laboratories across the Middle East and India, with field engineers in the UAE, KSA,
-          Qatar and India.
+          Laboratories across the Middle East and India, with field engineers in KSA, Qatar
+          and India.
         </p>
         <p className="statement-note" data-reveal>
           Registered and corporate offices in New Delhi.

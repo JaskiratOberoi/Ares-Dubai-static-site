@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: 'Which regions do you cover?',
-    a: 'We serve laboratories across the Middle East, India and neighbouring growth markets, with field engineers covering the UAE, KSA, Qatar and India.',
+    a: 'We serve laboratories across the Middle East, India and neighbouring growth markets, with field engineers covering KSA, Qatar and India.',
   },
   {
     q: 'Do you support instruments after installation?',
@@ -123,7 +123,7 @@ const Contact = () => {
       <section className="section qa container" aria-labelledby="offices-title">
         <div className="qa-head" data-reveal>
           <h2 id="offices-title">Two offices, one hotline, every day</h2>
-          <p>Both offices are in New Delhi. Field engineers cover the Gulf and India from there.</p>
+          <p>Both offices are in New Delhi. Field engineers cover KSA, Qatar and India from there.</p>
         </div>
         <dl className="qa-body rows" data-stagger>
           <div className="rows-item">
@@ -167,7 +167,7 @@ const Contact = () => {
           ))}
           <div className="rows-item">
             <dt>Field engineers</dt>
-            <dd>UAE, KSA, Qatar and India</dd>
+            <dd>KSA, Qatar and India</dd>
           </div>
         </dl>
       </section>

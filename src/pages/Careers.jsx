@@ -7,7 +7,7 @@ const opportunities = [
   {
     title: 'Field service engineers',
     detail:
-      'Deliver preventative maintenance and responsive on-site support across the UAE, KSA, Qatar and India.',
+      'Deliver preventative maintenance and responsive on-site support across KSA, Qatar and India.',
   },
   {
     title: 'Channel partners',
