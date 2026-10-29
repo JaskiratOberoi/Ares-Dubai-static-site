@@ -27,7 +27,7 @@ const Footer = () => {
           <a href="https://wa.me/919324634486" target="_blank" rel="noreferrer">
             <span className="measured">+91 93246 34486</span> on WhatsApp
           </a>
-          , <span className="measured">08:00</span> to <span className="measured">22:00</span> GST,
+          , <span className="measured">08:00</span> to <span className="measured">22:00</span> IST,
           every day.
         </p>
 

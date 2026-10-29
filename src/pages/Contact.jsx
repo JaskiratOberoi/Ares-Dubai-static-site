@@ -15,7 +15,7 @@ const offices = [
 const faqs = [
   {
     q: 'How quickly can you respond to an instrument breakdown?',
-    a: 'Use the WhatsApp hotline for urgent support. It goes straight to our engineering dispatch so an engineer can be assigned immediately. The support window runs 08:00 to 22:00 GST, every day of the week.',
+    a: 'Use the WhatsApp hotline for urgent support. It goes straight to our engineering dispatch so an engineer can be assigned immediately. The support window runs 08:00 to 22:00 IST, every day of the week.',
   },
   {
     q: 'Can we see an instrument before committing?',
@@ -73,7 +73,7 @@ const Contact = () => {
             <span className="measured">
               <span data-count="22" data-pad="2">22</span>:00
             </span>
-            <span className="reading-unit">GST</span>
+            <span className="reading-unit">IST</span>
           </p>
           <p className="counter-hotline" data-intro-item>
             Support hours, every day. Urgent instrument support:{' '}
@@ -147,7 +147,7 @@ const Contact = () => {
           <div className="rows-item">
             <dt>Support hours</dt>
             <dd>
-              <span className="measured">08:00</span> to <span className="measured">22:00</span> GST
+              <span className="measured">08:00</span> to <span className="measured">22:00</span> IST
               <br />
               Sunday through Saturday, every day
             </dd>

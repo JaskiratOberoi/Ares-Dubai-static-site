@@ -179,7 +179,7 @@ const Home = () => (
             <span className="measured">
               <span data-count="22" data-pad="2">22</span>:00
             </span>
-            <span className="reading-unit">GST</span>
+            <span className="reading-unit">IST</span>
           </p>
         </div>
         <dl className="qa-body rows" data-stagger>
