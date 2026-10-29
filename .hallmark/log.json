@@ -1,0 +1,33 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "site",
+  "shape": "Conversational FAQ",
+  "theme": "console",
+  "axes": "light/grotesk-sans/chromatic-amber",
+  "hero": "Index",
+  "nav": "floating pill",
+  "footer": "colophon block",
+  "imagery": "the user's four product photographs in colour, library 1 duotone",
+  "photos": [
+   "CSIRO_ScienceImage_11401_CSIRO_researcher_with_pipette.jpg"
+  ],
+  "entry": "a question as the hero head, the four analyzers as its index",
+  "fingerprint": "Hanging|Asymmetric spans|Hairline|Solid|Margin-aligned|None",
+  "sections": [
+   "Hero (Index: the four platforms as panels)",
+   "Reading set (10 min, 200/h, the spec rows, the flagship)",
+   "Statement band (the regions)",
+   "Rows (hotline, installation, training, maintenance)",
+   "Split close (bench photograph beside the demo ask)",
+   "Footer colophon"
+  ],
+  "signature": "the four analyzers cut from one surface as the first screen",
+  "waived": [
+   "44c"
+  ],
+  "prompt": "ARES Labs LLP, an IVD instrument distributor for laboratories in the Middle East and India; redesign of five routes from scratch",
+  "date": "2026-10-29"
+ }
+]

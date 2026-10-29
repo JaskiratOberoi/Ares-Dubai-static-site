@@ -1,58 +1,66 @@
 import { Link } from 'react-router-dom'
+import { products } from '../data/products'
 
 const Footer = () => {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="site-footer">
-      <div className="footer-inner">
-        <div className="footer-brand">
-          <img src="/assets/images/logo.png" alt="ARES Labs" />
-          <div>
-            <p className="footer-title">ARES Labs</p>
-            <p className="footer-tagline">Innovating diagnostic, empowering healthcare.</p>
-          </div>
-        </div>
-        
-        <div className="footer-nav">
-          <p className="footer-heading">Navigation</p>
-          <nav className="footer-links">
-            <Link to="/">Home</Link>
-            <Link to="/about-us">About Us</Link>
-            <Link to="/products">Products</Link>
-            <Link to="/careers">Careers</Link>
-            <Link to="/contact">Contact</Link>
-          </nav>
-        </div>
+    <footer className="footer">
+      <div className="container footer-inner">
+        <Link to="/" className="footer-mast" aria-label="ARES Labs, home">
+          <img
+            src="/assets/images/ares-glyph.png"
+            alt=""
+            className="brand-glyph"
+            width="121"
+            height="128"
+          />
+          <span className="brand-word">ARES Labs</span>
+        </Link>
 
-        <div className="footer-contact">
-          <p className="footer-heading">Get in Touch</p>
-          <div className="contact-item">
-            <svg className="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-            <a href="mailto:contact@ares-labs.com">contact@ares-labs.com</a>
-          </div>
-          <div className="contact-item">
-            <svg className="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-            <a href="https://wa.me/919324634486" target="_blank" rel="noreferrer">
-              +91-9324634486
-            </a>
-          </div>
-        </div>
-      </div>
-      
-      <div className="footer-divider"></div>
-      
-      <div className="footer-meta">
-        <p>© {year} ARES Labs. All rights reserved.</p>
+        <p className="footer-colophon">
+          ARES Labs LLP supplies and services in-vitro diagnostic instruments for laboratories in
+          the Middle East, India and neighbouring markets. Registered office: WZ-490C, Janak Park,
+          Hari Nagar, New Delhi 110064. Corporate office: A-4, 1st Floor, Subash Nagar, beside Amit
+          Nursing Home, New Delhi 110018. Write to{' '}
+          <a href="mailto:contact@ares-labs.com">contact@ares-labs.com</a> or message{' '}
+          <a href="https://wa.me/919324634486" target="_blank" rel="noreferrer">
+            <span className="measured">+91 93246 34486</span> on WhatsApp
+          </a>
+          , <span className="measured">08:00</span> to <span className="measured">22:00</span> GST,
+          every day.
+        </p>
+
+        <nav className="footer-links" aria-label="Footer">
+          <Link to="/" viewTransition>Home</Link>
+          <Link to="/products" viewTransition>Platforms</Link>
+          <Link to="/about-us" viewTransition>About us</Link>
+          <Link to="/careers" viewTransition>Careers</Link>
+          <Link to="/contact" viewTransition>Contact</Link>
+        </nav>
+        <nav className="footer-links" aria-label="Platforms">
+          {products.map((p) => (
+            <Link to={`/products#${p.id}`} key={p.id} viewTransition>
+              {p.title}
+            </Link>
+          ))}
+        </nav>
+
+        <p className="footer-meta">
+          <span>© {year} ARES Labs LLP</span>
+          <span data-credits>
+            Photographs:{' '}
+            <a href="https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_11401_CSIRO_researcher_with_pipette.jpg">
+              Morgan Brown, CSIRO
+            </a>{' '}
+            (CC BY 3.0),{' '}
+            <a href="https://commons.wikimedia.org/wiki/File:Test_tubes_in_rack.jpg">J.N. Eskra</a>{' '}
+            (CC BY-SA 4.0), both Wikimedia Commons
+          </span>
+        </p>
       </div>
     </footer>
   )
 }
 
 export default Footer
-

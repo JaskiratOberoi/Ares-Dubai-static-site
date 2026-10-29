@@ -1,73 +1,124 @@
-import Reveal from '../components/Reveal.jsx'
-
 const opportunities = [
   {
     title: 'Clinical application specialists',
     detail:
-      'Support our hospital and laboratory partners with instrument training, workflow optimisation, and validation services.',
+      'Support our hospital and laboratory partners with instrument training, workflow optimisation and validation services.',
   },
   {
     title: 'Field service engineers',
     detail:
-      'Deliver preventative maintenance and responsive on-site support across the UAE, KSA, Qatar, and India.',
+      'Deliver preventative maintenance and responsive on-site support across the UAE, KSA, Qatar and India.',
   },
   {
     title: 'Channel partners',
     detail:
-      'Collaborate with the ARES commercial team to extend our footprint in emerging markets throughout the region.',
+      'Work with the ARES commercial team to extend our footprint in emerging markets throughout the region.',
   },
 ]
 
-const Careers = () => {
-  return (
-    <>
-      <section className="hero hero--compact">
-        <div className="hero-backdrop" aria-hidden="true" />
-        <Reveal className="hero-content" delay={100} animation="slideUp">
-          <p className="eyebrow">Join our team</p>
-          <h1 className="hero-title-gradient">Careers & collaborations</h1>
-          <p className="lead">
-            ARES Labs is growing fast, and we're assembling a team of specialists who are passionate about the science
-            behind diagnostics.
-          </p>
-        </Reveal>
-      </section>
+const perks = [
+  {
+    title: 'Work on real problems',
+    text: 'Your work ships into hospitals and labs and changes patient outcomes.',
+  },
+  {
+    title: 'A growing region',
+    text: 'The Middle East and India are among the fastest-growing diagnostics markets.',
+  },
+  {
+    title: 'Learn the whole stack',
+    text: 'Optics, fluidics, assay chemistry and service strategy, in a small team.',
+  },
+]
 
-      <section className="section careers">
-        <div className="section-inner">
-          <Reveal className="lead" delay={120} animation="fadeIn">
-            <p>
-              Whether you are an engineer, application scientist, commercial strategist, or distribution
-              partner, we would love to hear from you.
-            </p>
-          </Reveal>
-          <div className="opportunity-grid">
-            {opportunities.map((role, index) => (
-              <Reveal 
-                as="article" 
-                key={role.title} 
-                delay={index * 120}
-                animation="scaleIn"
-              >
-                <h2>{role.title}</h2>
-                <p>{role.detail}</p>
-              </Reveal>
-            ))}
+const steps = [
+  { title: 'Apply', text: 'Email your CV or proposal, subject “Join ARES”.' },
+  { title: 'Intro call', text: 'A short conversation about your background.' },
+  { title: 'Deep dive', text: 'Meet the team and work a scenario from the field.' },
+  { title: 'Offer', text: 'Clear terms, a quick decision, structured onboarding.' },
+]
+
+const Careers = () => (
+  <>
+    <section className="hero hero--banner container" aria-labelledby="careers-title" data-intro>
+      <div className="banner-head">
+        <h1 id="careers-title" data-split>
+          Dear engineer, scientist or partner,
+        </h1>
+        <p className="lead" data-intro-item>
+          We are hiring people who care about the science behind diagnostics.
+        </p>
+      </div>
+    </section>
+
+    <section className="section letter container" aria-label="The letter">
+      <div className="letter-body" data-reveal>
+        <p>
+          ARES Labs is growing, and we are assembling specialists across engineering, application
+          science, commercial strategy and distribution. Three kinds of people are on our list this
+          year.
+        </p>
+      </div>
+
+      <dl className="rows rows--wide" data-stagger>
+        {opportunities.map((role) => (
+          <div className="rows-item" key={role.title}>
+            <dt>{role.title}</dt>
+            <dd>{role.detail}</dd>
           </div>
-          <Reveal className="careers-cta" delay={400} animation="scaleIn">
-            <h2>Ready to join us?</h2>
-            <p>
-              Send your CV or partnership proposal to{' '}
-              <a href="mailto:contact@ares-labs.com">contact@ares-labs.com</a> with the subject
-              "Join ARES". Please include a short overview of your experience and the markets or
-              technologies you specialise in.
-            </p>
-          </Reveal>
+        ))}
+      </dl>
+    </section>
+
+    <section className="band band--dark" aria-labelledby="perks-title">
+      <div className="container">
+        <h2 id="perks-title" data-reveal>
+          What you get from us
+        </h2>
+        <div className="trio" data-stagger>
+          {perks.map((p) => (
+            <div className="trio-item" key={p.title}>
+              <h3>{p.title}</h3>
+              <p>{p.text}</p>
+            </div>
+          ))}
         </div>
-      </section>
-    </>
-  )
-}
+      </div>
+    </section>
+
+    <section className="section container" aria-labelledby="process-title">
+      <h2 id="process-title" data-reveal>
+        Four steps, no surprises
+      </h2>
+      <ol className="steps" data-stagger>
+        {steps.map((s) => (
+          <li key={s.title}>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section className="section section--s container letter-close" aria-labelledby="apply-title">
+      <div className="letter-close-text" data-reveal>
+        <h2 id="apply-title">Ready to join us?</h2>
+        <p>
+          Send your CV or partnership proposal to contact@ares-labs.com with the subject “Join
+          ARES”. Include a short overview of your experience and the markets or technologies you
+          specialise in.
+        </p>
+        <p className="signoff">
+          With regards,
+          <br />
+          the ARES Labs team, New Delhi
+        </p>
+      </div>
+      <a className="btn btn--primary" href="mailto:contact@ares-labs.com?subject=Join%20ARES" data-fill data-reveal>
+        Email your application
+      </a>
+    </section>
+  </>
+)
 
 export default Careers
-

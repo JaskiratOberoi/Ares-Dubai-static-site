@@ -1,77 +1,87 @@
-import { useState, useEffect } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { useEffect, useId, useState } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 const NAV_LINKS = [
-  { path: '/', label: 'Home' },
+  { path: '/products', label: 'Platforms' },
   { path: '/about-us', label: 'About' },
-  { path: '/products', label: 'Products' },
-  { path: '/contact', label: 'Contact' },
   { path: '/careers', label: 'Careers' },
+  { path: '/contact', label: 'Contact' },
 ]
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
+  const location = useLocation()
+  const menuId = useId()
 
-  const toggleMenu = () => setIsOpen((state) => !state)
-  const closeMenu = () => setIsOpen(false)
-
+  // the menu closes on navigation
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    setOpen(false)
+  }, [location.pathname])
 
   return (
-    <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
-      <div className="header-bar">
-        <Link to="/" className="brand" onClick={closeMenu}>
-          <img src="/assets/images/logo.png" alt="ARES Labs logo" />
-          <span>ARES Labs</span>
-        </Link>
-        <button
-          type="button"
-          className="nav-toggle"
-          aria-label="Toggle navigation"
-          aria-expanded={isOpen}
-          onClick={toggleMenu}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-        <nav className="nav-desktop">
-          <ul>
+    <header className="nav-wrap">
+      <nav className={`nav ${open ? 'is-open' : ''}`} aria-label="Primary">
+        <div className="nav-bar">
+          <Link to="/" className="brand" aria-label="ARES Labs, home" viewTransition>
+            <img
+              src="/assets/images/ares-glyph.png"
+              alt=""
+              className="brand-glyph"
+              width="121"
+              height="128"
+            />
+            <span className="brand-word">ARES Labs</span>
+          </Link>
+
+          <ul className="nav-links">
             {NAV_LINKS.map(({ path, label }) => (
               <li key={path}>
-                <NavLink to={path} className={({ isActive }) => (isActive ? 'active' : '')}>
+                <NavLink
+                  to={path}
+                  className={({ isActive }) => `draw ${isActive ? 'is-active' : ''}`}
+                  viewTransition
+                >
                   {label}
                 </NavLink>
               </li>
             ))}
           </ul>
-        </nav>
-      </div>
-      <nav className={`nav-mobile ${isOpen ? 'is-open' : ''}`}>
-        <ul>
-          {NAV_LINKS.map(({ path, label }) => (
-            <li key={path}>
-              <NavLink
-                to={path}
-                className={({ isActive }) => (isActive ? 'active' : '')}
-                onClick={closeMenu}
-              >
-                {label}
-              </NavLink>
+
+          <div className="nav-actions">
+            <Link to="/contact" className="btn btn--quiet nav-cta" data-fill viewTransition>
+              Request a demo
+            </Link>
+            <button
+              type="button"
+              className="nav-toggle"
+              aria-expanded={open}
+              aria-controls={menuId}
+              onClick={() => setOpen((s) => !s)}
+            >
+              {open ? 'Close' : 'Menu'}
+            </button>
+          </div>
+        </div>
+
+        <div className="nav-menu" id={menuId}>
+          <ul className="nav-menu-inner">
+            {NAV_LINKS.map(({ path, label }) => (
+              <li key={path}>
+                <NavLink to={path} className={({ isActive }) => (isActive ? 'is-active' : undefined)} viewTransition>
+                  {label}
+                </NavLink>
+              </li>
+            ))}
+            <li>
+              <Link to="/contact" viewTransition>
+                Request a demo
+              </Link>
             </li>
-          ))}
-        </ul>
+          </ul>
+        </div>
       </nav>
     </header>
   )
 }
 
 export default Header
-

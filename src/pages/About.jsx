@@ -1,131 +1,110 @@
-import Reveal from '../components/Reveal.jsx'
-import AboutAnimatedBackground from '../components/AboutAnimatedBackground.jsx'
+import { Link } from 'react-router-dom'
 
-const coreValues = [
+const pillars = [
   {
-    title: 'Innovation',
-    description: 'We are committed to pushing the boundaries of diagnostic technology, continuously seeking new and better ways to improve patient care through advanced IVD solutions.',
+    title: 'Complete instrumentation',
+    text: 'Haematology, clinical biochemistry, immunoassay and HPLC, curated for laboratories of every size and throughput.',
   },
   {
-    title: 'Quality',
-    description: 'Quality is at the heart of everything we do. From research and development to manufacturing and customer support, we strive to meet and exceed the highest industry standards.',
+    title: 'Regional depth',
+    text: 'The Middle East, India and neighbouring growth markets, served by local engineers and application specialists.',
   },
   {
-    title: 'Integrity',
-    description: 'We operate with honesty, transparency, and ethical principles in all our interactions, building trust with our clients, partners, and employees.',
-  },
-  {
-    title: 'Customer-Centricity',
-    description: 'Our customers\' needs guide our actions. We prioritize understanding and addressing the unique challenges of healthcare professionals, providing tailored solutions and exceptional service.',
-  },
-  {
-    title: 'Collaboration',
-    description: 'We believe in the power of teamwork and partnerships. By fostering collaboration within our organization and with external partners, we achieve shared goals and drive mutual success.',
-  },
-  {
-    title: 'Excellence',
-    description: 'We pursue excellence in every aspect of our work, from the precision of our diagnostic tools to the efficiency of our operations, ensuring the best outcomes for our clients and their patients.',
-  },
-  {
-    title: 'Sustainability',
-    description: 'We are dedicated to sustainable practices that reduce our environmental impact and contribute to the long-term well-being of the communities we serve.',
-  },
-  {
-    title: 'Continuous Improvement',
-    description: 'We embrace a culture of continuous learning and improvement, encouraging our team to grow, adapt, and innovate to meet the evolving needs of the healthcare industry.',
+    title: 'Trusted partnerships',
+    text: 'A partner to respected hospitals and diagnostic networks, keeping their teams focused on patient care.',
   },
 ]
 
-const About = () => {
-  return (
-    <>
-      <AboutAnimatedBackground />
-      <section className="hero hero--compact">
-        <div className="hero-backdrop" aria-hidden="true" />
-        <Reveal className="hero-content" delay={100} animation="slideUp">
-          <p className="eyebrow">Our story</p>
-          <h1 className="hero-title-gradient">About ARES Labs</h1>
-          <p className="lead">
-            ARES Labs is a leading provider of cutting-edge IVD technology for the Middle East, India, and neighboring growth markets. With a long-standing legacy in the medical industry, we now channel our experience into a comprehensive product range covering instruments for laboratories of every size and throughput. Our solutions are engineered to deliver accuracy, efficiency, and resilience, making us a trusted partner for the region's most respected hospitals and diagnostic networks. Whether you specialize in haematology, clinical biochemistry, immunoassay, electrophoresis, or high-performance chromatography, we curate the instrumentation, assays, and support workflows that keep your teams focused on patient care.
+const coreValues = [
+  { title: 'Innovation', text: 'Pushing the boundaries of diagnostic technology, continuously seeking better ways to improve patient care.' },
+  { title: 'Quality', text: 'From R&D to manufacturing and support, we strive to meet and exceed the highest industry standards.' },
+  { title: 'Integrity', text: 'Honesty, transparency and ethical principles in every interaction, building trust with clients, partners and employees.' },
+  { title: 'Customer-centricity', text: 'Understanding and addressing the unique challenges of healthcare professionals with tailored solutions.' },
+  { title: 'Collaboration', text: 'Teamwork within our organisation and with external partners drives shared goals and mutual success.' },
+  { title: 'Excellence', text: 'Precision in our diagnostic tools and efficiency in our operations, for the best outcomes for clients and patients.' },
+  { title: 'Sustainability', text: 'Sustainable practices that reduce our environmental impact and support the communities we serve.' },
+  { title: 'Continuous improvement', text: 'A culture of learning that grows, adapts and innovates with the evolving needs of healthcare.' },
+]
+
+const About = () => (
+  <>
+    <section className="hero hero--corridor container" aria-labelledby="about-title" data-intro>
+      <h1 id="about-title" data-split>
+        Instruments, assays and the people behind them.
+      </h1>
+      <p className="lead" data-intro-item>
+        ARES Labs supplies IVD technology to the Middle East, India and nearby markets.
+      </p>
+    </section>
+
+    <section className="section doc container" aria-labelledby="story-title">
+      <div className="doc-row" data-reveal>
+        <h2 id="story-title">A long legacy, three commitments</h2>
+        <div className="doc-prose">
+          <p>
+            With a long legacy in the medical industry, we put that experience into
+            instrumentation, assays and support workflows built for accuracy, efficiency and
+            resilience.
           </p>
-        </Reveal>
-      </section>
-
-      <section className="section">
-        <div className="section-inner">
-          <div className="vision-mission-grid">
-            <Reveal className="vision-mission-card" delay={200} animation="scaleIn">
-              <h2 className="vision-mission-title">Vision</h2>
-              <p className="vision-mission-text">
-                To be a global leader in the development and delivery of innovative IVD instruments and reagents, empowering healthcare professionals with reliable and precise diagnostic tools that enhance patient care and contribute to a healthier world.
-              </p>
-            </Reveal>
-            <Reveal className="vision-mission-card" delay={280} animation="scaleIn">
-              <h2 className="vision-mission-title">Mission</h2>
-              <p className="vision-mission-text">
-                Our mission at Ares Labs LLP is to design, manufacture, and supply cutting-edge IVD instruments and reagents that meet the highest standards of quality and accuracy. We are committed to advancing diagnostic technologies, fostering innovation, and building lasting partnerships with healthcare providers to improve diagnostic capabilities and patient outcomes nationwide.
-              </p>
-            </Reveal>
+        </div>
+      </div>
+      <div className="trio" data-stagger>
+        {pillars.map((p) => (
+          <div className="trio-item" key={p.title}>
+            <h3>{p.title}</h3>
+            <p>{p.text}</p>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </section>
 
-      <section className="section">
-        <div className="section-inner">
-          <Reveal className="partner-card" delay={360} animation="scaleIn">
-            <div className="partner-image-wrapper">
-              <img src="/assets/images/nadeem-siddiqui.jpg" alt="Nadeem Siddiqui" />
-            </div>
-            <div className="partner-content">
-              <h2 className="partner-name">Nadeem Siddiqui</h2>
-              <p className="partner-role">Partner</p>
-              <p className="partner-description">
-                Nadeem Siddiqui is an instrumentation engineer with strong expertise in sales and services, making him a valuable asset in both technical and customer-facing aspects of the business.
-              </p>
-            </div>
-          </Reveal>
+    <section className="band band--dark" aria-label="Vision and mission">
+      <div className="container vm">
+        <p className="statement statement--vision" data-reveal>
+          To be a global leader in the development and delivery of innovative IVD instruments and
+          reagents, giving healthcare professionals reliable and precise diagnostic tools that
+          enhance patient care and contribute to a healthier world.
+        </p>
+        <p className="vm-caption" data-reveal>
+          The ARES Labs vision
+        </p>
+        <div className="vm-mission" data-reveal>
+          <h2>Quality and accuracy, without compromise</h2>
+          <p>
+            Our mission: to design, manufacture and supply IVD instruments and reagents that meet
+            the highest standards of quality and accuracy, advancing diagnostic technologies,
+            fostering innovation and building lasting partnerships with healthcare providers.
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section className="section">
-        <div className="section-inner">
-          <Reveal className="section-heading" delay={440} animation="slideUp">
-            <p className="eyebrow">What drives us</p>
-            <h2 className="section-title">Core Values</h2>
-          </Reveal>
-          <div className="core-values-grid">
-            {coreValues.map((value, index) => (
-              <Reveal 
-                key={value.title} 
-                className="core-value-card" 
-                delay={480 + (index * 60)} 
-                animation="scaleIn"
-              >
-                <h3 className="core-value-title">{value.title}</h3>
-                <p className="core-value-text">{value.description}</p>
-              </Reveal>
-            ))}
+    <section className="section container" aria-labelledby="values-title">
+      <h2 id="values-title" className="values-title" data-reveal>
+        Eight values, one standard
+      </h2>
+      <dl className="values" data-stagger>
+        {coreValues.map((v) => (
+          <div className="values-item" key={v.title}>
+            <dt>{v.title}</dt>
+            <dd>{v.text}</dd>
           </div>
-        </div>
-      </section>
+        ))}
+      </dl>
+    </section>
 
-      <section className="section prose">
-        <div className="section-inner">
-          <Reveal className="contact-cta" delay={960} animation="scaleIn">
-            <h2>Ready to modernise your diagnostics workflow?</h2>
-            <p>
-              Our consultants are available to audit your current setup and propose a roadmap that balances throughput,
-              quality, and cost control.
-            </p>
-            <a className="btn primary" href="mailto:contact@ares-labs.com">
-              Schedule a consultation
-            </a>
-          </Reveal>
+    <section className="band band--close" aria-labelledby="about-close-title">
+      <div className="container close-band">
+        <div className="close-band-text" data-reveal>
+          <h2 id="about-close-title">Your menu and volumes, our proposal</h2>
+          <p>Send us your test menu and daily volumes and we will propose the platform mix and the service programme.</p>
         </div>
-      </section>
-    </>
-  )
-}
+        <Link to="/contact" className="btn btn--primary" data-fill data-reveal viewTransition>
+          Request a demo
+        </Link>
+      </div>
+    </section>
+  </>
+)
 
 export default About
-
